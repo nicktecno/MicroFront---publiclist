@@ -4,26 +4,22 @@ import { useLang } from "../../Context/LangContext";
 
 import api from "../../services/api";
 
-import { useCart } from "../../Context/CartLengthContext";
-import AddPaymentMethodComponent from "./AddPaymentMethod";
+import OrderDataComponent from "./OrderData";
 
-const AddPaymentMethodPage = () => {
+const OrderDataPage = () => {
   const { routeTranslations } = useLang();
-
-  const { setCartLength } = useCart();
 
   const mktName = process.env.NEXT_PUBLIC_REACT_APP_NAME;
 
   return (
     <>
-      <AddPaymentMethodComponent
+      <OrderDataComponent
         mktName={mktName}
         api={api}
         routeTranslations={routeTranslations}
-        setCartLength={setCartLength}
       />
     </>
   );
 };
 
-export default AddPaymentMethodPage;
+export default OrderDataPage;

@@ -36,7 +36,7 @@ const nextConfig = {
     };
     config.plugins.push(
       new NextFederationPlugin({
-        name: "addPaymentMethodPage",
+        name: "ordersHistoryPage",
         remotes: {
           loginPage: `loginPage@https://micro-front-login.vercel.app/_next/static/${
             isServer ? "ssr" : "chunks"
@@ -48,8 +48,8 @@ const nextConfig = {
         },
         filename: "static/chunks/remoteEntry.js",
         exposes: {
-          "./addPaymentMethodPage":
-            "./PagesComponents/AddPaymentMethod/AddPaymentMethod.jsx",
+          "./ordersHistoryPage":
+            "./PagesComponents/OrdersHistory/OrdersHistory.jsx",
         },
 
         extraOptions: {
