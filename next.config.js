@@ -36,7 +36,7 @@ const nextConfig = {
     };
     config.plugins.push(
       new NextFederationPlugin({
-        name: "ordersHistoryPage",
+        name: "orders",
         remotes: {
           loginPage: `loginPage@https://micro-front-login.vercel.app/_next/static/${
             isServer ? "ssr" : "chunks"
@@ -50,6 +50,7 @@ const nextConfig = {
         exposes: {
           "./ordersHistoryPage":
             "./PagesComponents/OrdersHistory/OrdersHistory.jsx",
+          "./orderDataPage": "./PagesComponents/OrderData/OrderData.jsx",
         },
 
         extraOptions: {
