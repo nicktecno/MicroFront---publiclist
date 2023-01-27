@@ -48,7 +48,9 @@ const nextConfig = {
         },
         filename: "static/chunks/remoteEntry.js",
         exposes: {
-          "./photobookPage": "./PagesComponents/Photobook/Photobook.jsx",
+          "./wishlist": "./PagesComponents/Wishlist/WishlistComponent.jsx",
+          "./wishlistProducts":
+            "./PagesComponents/WishlistProducts/WishlistProductsComponent.jsx",
         },
 
         extraOptions: {
