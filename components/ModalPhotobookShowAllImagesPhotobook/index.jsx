@@ -5,8 +5,8 @@ import notification from "../../services/notification";
 
 import { ModalPhotobookDeletePhotobookImage } from "../ModalPhotobookDeletePhotobookImage";
 
-import { PencilSquare } from "@styled-icons/bootstrap/PencilSquare";
-import { TrashFill } from "@styled-icons/bootstrap/TrashFill";
+import { Pencil } from "@styled-icons/boxicons-solid/Pencil";
+import { Trash } from "@styled-icons/ionicons-solid/Trash";
 import ModalPhotobookUpdateImagePhotobook from "../ModalPhotobookUpdateImagePhotobook";
 
 export function ModalPhotobookShowAllImagesPhotobook({
@@ -202,7 +202,7 @@ export function ModalPhotobookShowAllImagesPhotobook({
                             setSelectImage(data);
                           }}
                         >
-                          <PencilSquare />
+                          <Pencil />
                         </div>
                         <div
                           className="boxDelete"
@@ -211,7 +211,7 @@ export function ModalPhotobookShowAllImagesPhotobook({
                             setSelectImage(data);
                           }}
                         >
-                          <TrashFill />
+                          <Trash />
                         </div>
 
                         {allLikes.length > 0 &&

@@ -39,7 +39,6 @@ export default function MultipleSelectCheckmarksPromoterClassifications({
   const [optionsOfClassifications, setOptionsOfClassifications] =
     React.useState([]);
 
-  const setCartLength = useCart();
   const [localOption, setLocalOption] = React.useState([]);
   const [firstUpdate, setFirstUpdate] = React.useState(true);
 

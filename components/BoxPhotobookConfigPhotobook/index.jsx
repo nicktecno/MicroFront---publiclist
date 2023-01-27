@@ -3,12 +3,12 @@ import * as S from "./style";
 
 import { DotsThreeHorizontal } from "@styled-icons/entypo/DotsThreeHorizontal";
 
-import { PencilSquare } from "@styled-icons/bootstrap/PencilSquare";
-import { TrashFill } from "@styled-icons/bootstrap/TrashFill";
+import { Pencil } from "@styled-icons/boxicons-solid/Pencil";
+import { Trash } from "@styled-icons/ionicons-solid/Trash";
 import { ShareAlt } from "@styled-icons/boxicons-solid/ShareAlt";
-import { ThreeDotsVertical } from "@styled-icons/bootstrap/ThreeDotsVertical";
+import { BsThreeDotsVertical } from "react-icons/bs";
 import { ViewShow } from "@styled-icons/zondicons/ViewShow";
-import { Gallery } from "@styled-icons/remix-line/Gallery";
+import { Gallery } from "@styled-icons/remix-fill/Gallery";
 import { ModalPhotobookDeletePhotobook } from "../ModalPhotobookDeletePhotobook";
 import ModalPhotobookUpdatePhotobook from "../ModalPhotobookUpdatePhotobook";
 import ModalPhotobookShowImagesPhotobook from "../ModalPhotobookShowImagesPhotobook";
@@ -106,7 +106,7 @@ export default function BoxPhotobookConfigPhotobook({
                 >
                   <div className="containerTexto">Editar</div>
                   <div className="containerView">
-                    <PencilSquare />
+                    <Pencil />
                   </div>
                 </div>
                 <div
@@ -130,7 +130,7 @@ export default function BoxPhotobookConfigPhotobook({
                 >
                   <div className="containerTexto">Apagar</div>
                   <div className="containerView">
-                    <TrashFill />
+                    <Trash />
                   </div>
                 </div>
                 <div
@@ -178,7 +178,7 @@ export default function BoxPhotobookConfigPhotobook({
                 setActiveModalUpdatePhotobook("active");
               }}
             >
-              <PencilSquare />
+              <Pencil />
             </div>
             <div
               className="functionBox"
@@ -197,7 +197,7 @@ export default function BoxPhotobookConfigPhotobook({
                 setModalDeleteActive("active");
               }}
             >
-              <TrashFill />
+              <Trash />
             </div>
           </div>
           <div className="boxFunctionsMobile">
@@ -208,7 +208,7 @@ export default function BoxPhotobookConfigPhotobook({
                 setModalEditMobile("active");
               }}
             >
-              <ThreeDotsVertical />
+              <BsThreeDotsVertical />
             </div>
           </div>
           <div className="boxFunctionsMobile420">

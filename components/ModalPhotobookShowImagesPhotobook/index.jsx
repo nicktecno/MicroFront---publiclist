@@ -9,8 +9,8 @@ import ModalPhotobookAddImagePhotobook from "../ModalPhotobookAddImagePhotobook"
 import { ModalPhotobookDeletePhotobookImage } from "../ModalPhotobookDeletePhotobookImage";
 import ModalPhotobookUpdateImagePhotobook from "../ModalPhotobookUpdateImagePhotobook";
 
-import { PencilSquare } from "@styled-icons/bootstrap/PencilSquare";
-import { TrashFill } from "@styled-icons/bootstrap/TrashFill";
+import { Pencil } from "@styled-icons/boxicons-solid/Pencil";
+import { Trash } from "@styled-icons/ionicons-solid/Trash";
 import { Like } from "@styled-icons/boxicons-regular/Like";
 
 import { ModalPhotobookShowAllImagesPhotobook } from "../ModalPhotobookShowAllImagesPhotobook";
@@ -303,7 +303,7 @@ export default function ModalPhotobookShowImagesPhotobook({
                                 }}
                               >
                                 <div className="image">
-                                  <PencilSquare />
+                                  <Pencil />
                                 </div>
                                 <div className="title">Atualizar</div>
                               </button>
@@ -338,7 +338,7 @@ export default function ModalPhotobookShowImagesPhotobook({
                                 }}
                               >
                                 <div className="image">
-                                  <TrashFill />
+                                  <Trash />
                                 </div>
                                 <div className="title">Deletar</div>
                               </button>

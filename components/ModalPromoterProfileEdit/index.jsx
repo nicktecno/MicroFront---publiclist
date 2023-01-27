@@ -21,6 +21,7 @@ export default function ModalPromoterProfileEdit({
   getProfileData,
   api,
   mktName,
+  setCartLength,
 }) {
   const [loading, setLoading] = useState(false);
 

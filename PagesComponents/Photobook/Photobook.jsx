@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react";
 
 import * as S from "./style";
 
-import Loading from "../../Loading";
+import Loading from "../../components/Loading";
 
 import { User } from "@styled-icons/boxicons-regular/User";
 import { ShareAlt } from "@styled-icons/boxicons-solid/ShareAlt";
-import { PencilSquare } from "@styled-icons/bootstrap/PencilSquare";
+import { Pencil } from "@styled-icons/boxicons-solid/Pencil";
 
 import ModalPromoterProfileEdit from "../../components/ModalPromoterProfileEdit";
 import BoxPromoterAssociationRequest from "../../components/BoxPromoterAssociationRequest";
 import notification from "../../services/notification";
 import BoxPromoterMyAssociations from "../../components/BoxPromoterMyAssociations";
 
-import { PlusSquare } from "@styled-icons/bootstrap/PlusSquare";
+import { PlusSquare } from "@styled-icons/evaicons-solid/PlusSquare";
 
 import BoxPhotobookConfigPhotobook from "../../components/BoxPhotobookConfigPhotobook";
 import ModalPhotobookAddNewPhotobook from "../../components/ModalPhotobookAddNewPhotobook";
@@ -24,10 +24,12 @@ import ModalPhotobookSharePhotobook from "../../components/ModalPhotobookSharePh
 import BoxPromoterMySales from "../../components/BoxPromoterMySales";
 import ReactInputMask from "react-input-mask";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function PhotobookComponent({
   api,
   setCartLength,
-  wishListApi,
+
   mktName,
   routeTranslations,
   wishListApi,
@@ -71,8 +73,6 @@ function PhotobookComponent({
   const [activeModalCreatePhotobook, setActiveModalCreatePhotobook] =
     useState("inactive");
   const [allComissions, setAllComissions] = useState([]);
-
-  const { setCartLength } = useCart();
 
   async function requestMyAssociations() {
     try {
@@ -585,6 +585,8 @@ function PhotobookComponent({
           copyText={copyText}
           modalInside={false}
           idMyPhotobook={idMyPhotobook}
+          mktName={mktName}
+          appUrl={appUrl}
         />
       )}
 
@@ -601,6 +603,7 @@ function PhotobookComponent({
           getProfileData={getProfileData}
           api={api}
           mktName={mktName}
+          setCartLength={setCartLength}
         />
       )}
 
@@ -661,7 +664,7 @@ function PhotobookComponent({
                 >
                   <div>Configurar perfil</div>
                   <span>
-                    <PencilSquare />
+                    <Pencil />
                   </span>
                 </button>
               </div>

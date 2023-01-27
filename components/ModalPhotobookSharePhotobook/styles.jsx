@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { generateMedia } from "styled-media-query";
-import { Whatsapp } from "@styled-icons/bootstrap/Whatsapp";
+import { Whatsapp } from "@styled-icons/boxicons-logos/Whatsapp";
 
 const customMedia = generateMedia({
   desktop: "1200px",
