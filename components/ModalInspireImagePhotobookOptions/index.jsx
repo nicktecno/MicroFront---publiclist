@@ -27,7 +27,7 @@ export function ModalInspireImagePhotobookOptions({
         {
           headers: {
             Type: "customer",
-            "Url-Store": process.env.NEXT_PUBLIC_REACT_APP_HEADER_URL,
+            "Url-Store": headerUrl,
           },
         }
       );
@@ -66,7 +66,7 @@ export function ModalInspireImagePhotobookOptions({
         {
           headers: {
             Type: "customer",
-            "Url-Store": process.env.NEXT_PUBLIC_REACT_APP_HEADER_URL,
+            "Url-Store": headerUrl,
           },
         }
       );
@@ -101,7 +101,7 @@ export function ModalInspireImagePhotobookOptions({
         {
           headers: {
             Type: "customer",
-            "Url-Store": process.env.NEXT_PUBLIC_REACT_APP_HEADER_URL,
+            "Url-Store": headerUrl,
           },
         }
       );
@@ -127,10 +127,7 @@ export function ModalInspireImagePhotobookOptions({
   }
 
   useEffect(() => {
-    if (
-      localStorage.getItem(process.env.NEXT_PUBLIC_REACT_APP_NAME) &&
-      activeModal === "active"
-    ) {
+    if (localStorage.getItem(mktName) && activeModal === "active") {
       loadLikes();
       setLogged(true);
     }
