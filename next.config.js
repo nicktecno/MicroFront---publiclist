@@ -36,7 +36,7 @@ const nextConfig = {
     };
     config.plugins.push(
       new NextFederationPlugin({
-        name: "wishlist",
+        name: "likesPage",
         remotes: {
           loginPage: `loginPage@https://micro-front-login.vercel.app/_next/static/${
             isServer ? "ssr" : "chunks"
@@ -48,9 +48,7 @@ const nextConfig = {
         },
         filename: "static/chunks/remoteEntry.js",
         exposes: {
-          "./wishlist": "./PagesComponents/Wishlist/WishlistComponent.jsx",
-          "./wishlistProducts":
-            "./PagesComponents/WishlistProducts/WishlistProductsComponent.jsx",
+          "./likesPage": "./PagesComponents/Likes/LikesComponent.jsx",
         },
 
         extraOptions: {
