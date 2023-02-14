@@ -9,7 +9,7 @@ import api from "../../services/api";
 import wishListApiUnlogged from "../../services/msWishListUnlogged";
 import wishListApi from "../../services/msWishList";
 
-import PubliclistComponent from "./Publiclist";
+import PubliclistComponent from "./publiclistPage";
 
 const PubliclistPage = () => {
   const { routeTranslations } = useLang();

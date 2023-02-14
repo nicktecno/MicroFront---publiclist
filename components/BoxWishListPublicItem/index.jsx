@@ -26,6 +26,7 @@ function BoxWishListPublicItem({
   setModal,
   wishListApi,
   setCartLength,
+  appImages,
 }) {
   const {
     data: productData,

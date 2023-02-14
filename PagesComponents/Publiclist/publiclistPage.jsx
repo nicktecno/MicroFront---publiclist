@@ -6,6 +6,7 @@ import notification from "../../services/notification";
 
 // componentes boostrap
 import { Container, Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Css do componente
 import * as S from "./styles";
@@ -19,7 +20,7 @@ import useWindowDimensions from "../../services/windowSizeHook";
 
 import BoxGeneralWhite from "../../components/BoxGeneralWhite";
 
-function PubliclistComponent(
+function PubliclistComponent({
   api,
   wishListApiUnlogged,
   wishListApi,
@@ -30,8 +31,8 @@ function PubliclistComponent(
   mktName,
   companyId,
   appUrl,
-  appImages
-) {
+  appImages,
+}) {
   const history = useRouter();
   const { width } = useWindowDimensions();
   const [productsOfList, setProductsOfList] = useState([]);
@@ -283,6 +284,7 @@ function PubliclistComponent(
     setLoading(true);
     setProductsOfList([]);
     const data = { company_id: companyId };
+
     try {
       const { data: response } = await wishListApiUnlogged.post(
         `/wish-list/detail/${history.query.code[0]}`,

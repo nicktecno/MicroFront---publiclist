@@ -48,7 +48,7 @@ const nextConfig = {
         },
         filename: "static/chunks/remoteEntry.js",
         exposes: {
-          "./publiclistPage": "./PagesComponents/Publiclist/Publiclist.jsx",
+          "./publiclistPage": "./PagesComponents/Publiclist/publiclistPage.jsx",
         },
 
         extraOptions: {
