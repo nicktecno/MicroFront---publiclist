@@ -310,7 +310,6 @@ function BoxWishListPublicItem({
       if (token) {
         wishListApi.defaults.headers.Authorization = token;
       } else {
-        console.log("olá");
         notification("Sua sessão expirou, faça o login novamente", "error");
         sessionStorage.setItem("urlantiga", window.location.href);
         setCartLength("0");
@@ -403,8 +402,6 @@ function BoxWishListPublicItem({
       setAddAllCartLocal([]);
     }
   }, [productData, atualizarEstado]);
-  console.log(product, productData);
-  console.log(appImages);
 
   return (
     <>

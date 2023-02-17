@@ -147,7 +147,6 @@ function PubliclistComponent({
 
   async function addAllCart() {
     setLoading(true);
-    console.log("oiee");
     if (!located && !localStorage.getItem(mktName)) {
       setLoading(false);
       notification(
@@ -264,7 +263,6 @@ function PubliclistComponent({
                 sessionStorage.setItem("urlantiga", window.location.href);
                 setLoading(false);
                 setTimeout(function () {
-                  console.log("olaaa");
                   history.push("/login");
                 }, 3000);
               } else {
