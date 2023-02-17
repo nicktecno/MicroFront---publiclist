@@ -19,6 +19,7 @@ const PubliclistPage = () => {
   const mktName = process.env.NEXT_PUBLIC_REACT_APP_NAME;
   const companyId = process.env.NEXT_PUBLIC_REACT_APP_COMPANY_ID;
   const appUrl = process.env.NEXT_PUBLIC_REACT_APP_URL;
+  const appHeaderUrl = process.env.NEXT_PUBLIC_REACT_APP_HEADER_URL;
   const appImages = process.env.NEXT_PUBLIC_REACT_APP_IMAGES_URL;
 
   return (
@@ -35,6 +36,7 @@ const PubliclistPage = () => {
         mktName={mktName}
         companyId={companyId}
         appUrl={appUrl}
+        appHeaderUrl={appHeaderUrl}
         appImages={appImages}
       />
     </>

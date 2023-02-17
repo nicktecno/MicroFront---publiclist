@@ -14,7 +14,7 @@ import { ShareAlt } from "@styled-icons/boxicons-solid/ShareAlt";
 
 //imagens
 
-import BoxWishListPublicItem from "../../components/BoxWishListPublicItem";
+import BoxWishListPublicItemWishList from "../../components/BoxWishListPublicItemWishList";
 import ModalSharePubliclist from "../../components/ModalSharePubliclist";
 import useWindowDimensions from "../../services/windowSizeHook";
 
@@ -31,6 +31,7 @@ function PubliclistComponent({
   mktName,
   companyId,
   appUrl,
+  appHeaderUrl,
   appImages,
 }) {
   const history = useRouter();
@@ -146,7 +147,7 @@ function PubliclistComponent({
 
   async function addAllCart() {
     setLoading(true);
-
+    console.log("oiee");
     if (!located && !localStorage.getItem(mktName)) {
       setLoading(false);
       notification(
@@ -263,6 +264,7 @@ function PubliclistComponent({
                 sessionStorage.setItem("urlantiga", window.location.href);
                 setLoading(false);
                 setTimeout(function () {
+                  console.log("olaaa");
                   history.push("/login");
                 }, 3000);
               } else {
@@ -410,7 +412,7 @@ function PubliclistComponent({
                             xs={12}
                             md={6}
                           >
-                            <BoxWishListPublicItem
+                            <BoxWishListPublicItemWishList
                               setAtualizarEstado={setAtualizarEstado}
                               atualizarEstado={atualizarEstado}
                               code={history.query.code[0]}
@@ -425,6 +427,8 @@ function PubliclistComponent({
                               located={located}
                               setModal={setModal}
                               appImages={appImages}
+                              appHeaderUrl={appHeaderUrl}
+                              api={api}
                               wishListApi={wishListApi}
                               setCartLength={setCartLength}
                             />

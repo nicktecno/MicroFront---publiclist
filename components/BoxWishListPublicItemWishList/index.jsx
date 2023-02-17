@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+
 // Template do site
 import * as S from "./styles";
 
@@ -8,8 +8,6 @@ import { GET_PRODUCT } from "./Querys";
 
 import { useMenu } from "../../Context/Menu";
 import notification from "../../services/notification";
-
-import api from "../../services/api";
 
 function BoxWishListPublicItem({
   id,
@@ -22,8 +20,10 @@ function BoxWishListPublicItem({
   addAllCartLocal,
   setAddAllCartLocal,
   mktName,
+  appHeaderUrl,
   located,
   setModal,
+  api,
   wishListApi,
   setCartLength,
   appImages,
@@ -65,7 +65,6 @@ function BoxWishListPublicItem({
   );
 
   const { show } = useMenu();
-  const history = useRouter();
 
   function quantityCartAnonymous(obj) {
     const chaveObjAtual = Object.keys(obj.loja);
@@ -221,7 +220,7 @@ function BoxWishListPublicItem({
         },
       ];
 
-      if (!localStorage.getItem(process.env.NEXT_PUBLIC_REACT_APP_NAME)) {
+      if (!localStorage.getItem(mktName)) {
         quantityCartAnonymous(dataCart2[0]);
 
         let countItensCart = sessionStorage.getItem("cart")
@@ -256,7 +255,7 @@ function BoxWishListPublicItem({
             "/customer/checkout/cart/add",
             dataCart
           );
-          if (localStorage.getItem(process.env.NEXT_PUBLIC_REACT_APP_NAME)) {
+          if (localStorage.getItem(mktName)) {
             const { data: responseCustomer } = await api.get(
               "/customer/checkout/cart"
             );
@@ -307,12 +306,11 @@ function BoxWishListPublicItem({
     setLoading(true);
 
     try {
-      const token = sessionStorage.getItem(
-        process.env.NEXT_PUBLIC_REACT_APP_NAME
-      );
+      const token = localStorage.getItem(mktName);
       if (token) {
         wishListApi.defaults.headers.Authorization = token;
       } else {
+        console.log("olá");
         notification("Sua sessão expirou, faça o login novamente", "error");
         sessionStorage.setItem("urlantiga", window.location.href);
         setCartLength("0");
@@ -326,7 +324,7 @@ function BoxWishListPublicItem({
         {
           headers: {
             Type: "customer",
-            "Url-Store": process.env.NEXT_PUBLIC_REACT_APP_HEADER_URL,
+            "Url-Store": appHeaderUrl,
           },
           params: {
             product_id: id,
@@ -405,6 +403,8 @@ function BoxWishListPublicItem({
       setAddAllCartLocal([]);
     }
   }, [productData, atualizarEstado]);
+  console.log(product, productData);
+  console.log(appImages);
 
   return (
     <>
